@@ -440,6 +440,15 @@ d3.csv("deathdays.csv",
         .on("mousemove", mousemove)
         .on("mouseleave", mouseleave)
 
+ svg.append("text")
+                    .text("Number of deaths per day")  
+                    .style("font-size", "24px")
+                    .style("fill", "#00008B")
+
+                    .attr("x", 0)
+                    .attr("y", -70)
+                    .attr("transform", "translate(100,80) rotate(0)")
+  
 svg.append("text")
                     .text("Deaths")  
                     .style("font-size", "12px")
