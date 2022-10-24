@@ -59,7 +59,6 @@ var circles = svg1.selectAll("circle")
           )
 
 
-        //    else {return "blue"}))
       //console.log(data2)
       
 
@@ -70,9 +69,7 @@ var circles = svg1.selectAll("circle")
                 //output_streets(streets)
                       var width = 400;
                       var height = 600;
-                      //svg.attr('width', width);
-                      //svg.attr('height', height);
-                      //var svg = d3.select('body').append('svg');
+                  
                       var lineFunction = d3.line()
                                  .x(function(d) { return  d.x*20; })
                                  .y(function(d) { return 500 - d.y*20; });
@@ -80,8 +77,7 @@ var circles = svg1.selectAll("circle")
                     .data(streets)
 
                     .enter().append("path")
-                    // .attr ("width", -100)
-                    // .attr ("height", -200)
+                 
                     
                     .attr("d", lineFunction)
                     .attr("stroke", "black")
@@ -145,7 +141,6 @@ var circles = svg1.selectAll("circle")
                                                             
                                        )
                           )
-                    //.attr("transform", "translate(" + width + "," + height + ")")
                     .append("g");
 
 
@@ -322,18 +317,8 @@ svg1.append("circle")
 
         });
 
-//var circle = svg.append ("circle")
-    //    .attr("cx", 10)
-    //    .attr("cy",10)
-    //    .attr("r",5);
-          
 
-// set the dimensions and margins of the graph
-// var margin = {top: 10, right: 30, bottom: 30, left: 60},
-//     width = 460 - margin.left - margin.right,
-//     height = 450 - margin.top - margin.bottom;
 
-// // append the svg object to the body of the page
 var svg8 = d3.select("#my_dataviz")
   .append("svg8")
     .attr("width", width + margin.left + margin.right)
@@ -343,14 +328,12 @@ var svg8 = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
     
-    
-//console.log('Hello')
-//Read the data
+
 
 
 d3.csv("deathdays.csv",
   
-  // When reading the csv, I must format variables:
+ 
   function(d){
     return { date : d3.timeParse ('%e-%b') (d.date), value : d.deaths, Cummulative
 : d.Cummulative}
@@ -358,10 +341,8 @@ d3.csv("deathdays.csv",
                },
 
 
-  // Now I can use this dataset:
   function(data) {
 
-    // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain(d3.extent(data, function(d) { return d.date; }))
       .range([ 0, width ]);
@@ -369,26 +350,22 @@ d3.csv("deathdays.csv",
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
-    // Add Y axis
     var y = d3.scaleLinear()
       .domain( [0, 150])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
 
-    // Add the line
     svg.append("path")
       .datum(data)
       .attr("fill", "none")
       .attr("stroke", "black")
       .attr("stroke-width", 1.5)
       .attr("d", d3.line()
-       // .curve(d3.curveBasis) // Just add that to have a curve instead of segments
         .x(function(d) { return x(d.date) })
         .y(function(d) { return y(d.value) })
         )
 
-    // create a tooltip
     var Tooltip = d3.select("#my_dataviz")
       .append("div")
       .style("opacity", 0)
@@ -401,7 +378,6 @@ d3.csv("deathdays.csv",
       .style("display", "inline-block");
 
 
-      // Three function that change the tooltip when user hover / move / leave a cell
       var mouseover = function(d) {
         
         Tooltip
