@@ -418,7 +418,7 @@ d3.csv("deathdays.csv",
 
  svg.append("text")
                     .text("Number of deaths per day")  
-                    .style("font-size", "24px")
+                    .style("font-size", "20px")
                     .style("fill", "#00008B")
 
                     .attr("x", 0)
