@@ -115,6 +115,33 @@ var circles = svg1.selectAll("circle")
                     .attr("y", -65)
                     .attr("transform", "translate(300,150) rotate(245)")
 
+           
+                   svg1.append("text")
+                    .text("Oxford St")
+                    .style("font-size", "8px")
+                    .style("fill", "#00008B")
+
+                    .attr("x", -100)
+                    .attr("y", 0)
+                    .attr("transform", "translate(300,150) rotate(-10)")
+
+                   svg1.append("text")
+                    .text("Regent St")
+                    .style("font-size", "8px")
+                    .style("fill", "#00008B")
+
+                    .attr("x", 40)
+                    .attr("y", 192)
+                    .attr("transform", "translate(300,150) rotate(60)")
+
+                   svg1.append("text")
+                    .text("Brewer St")
+                    .style("font-size", "8px")
+                    .style("fill", "#00008B")
+
+                     .attr("x", -195)
+                    .attr("y", 130)
+                    .attr("transform", "translate(300,150) rotate(320)")
                     svg1.append("text")
                     .text("Dean Street")
                     .style("font-size", "8px")
